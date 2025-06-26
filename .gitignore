@@ -1,0 +1,21 @@
+# Stack build artifacts
+.stack-work/
+
+# GHC object and binary files
+*.hi
+*.o
+*.dyn_o
+*.dyn_hi
+
+# Executables
+mp
+
+# MacOS metadata
+.DS_Store
+
+# VSCode settings (if you use VSCode)
+.vscode/
+
+# Logs or temp files
+*.log
+*.tmp
