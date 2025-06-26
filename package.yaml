@@ -1,0 +1,44 @@
+name:       cs340mp
+
+extra-source-files:
+- README.md
+- REPORT.md
+
+dependencies:
+- base >= 4.7 && < 5
+- random
+- hspec
+- HUnit
+- QuickCheck
+- transformers
+
+executables:
+  mp:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp
+    when:
+    - condition: false
+      other-modules: Paths_cs340mp
+
+library:
+  source-dirs: src
+  when:
+  - condition: false
+    other-modules: Paths_cs340mp
+
+tests:
+  mp-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - cs340mp

@@ -1,0 +1,62 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           cs340mp
+version:        0.0.0
+build-type:     Simple
+extra-source-files:
+    README.md
+    REPORT.md
+
+library
+  exposed-modules:
+      IMP
+      Parser
+  hs-source-dirs:
+      src
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , hspec
+    , random
+    , transformers
+  default-language: Haskell2010
+
+executable mp
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , cs340mp
+    , hspec
+    , random
+    , transformers
+  default-language: Haskell2010
+
+test-suite mp-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      IMPSpec
+      ParserSpec
+      Paths_cs340mp
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      HUnit
+    , QuickCheck
+    , base >=4.7 && <5
+    , cs340mp
+    , hspec
+    , random
+    , transformers
+  default-language: Haskell2010
